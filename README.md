@@ -67,3 +67,7 @@ android {
         minSdk = 23
     }
 }
+
+# authentication funcion 
+
+login function and signup function is done login and signup is using email but the email verification is doesnot created 

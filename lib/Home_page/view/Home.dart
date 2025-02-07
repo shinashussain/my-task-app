@@ -32,6 +32,16 @@ class Home extends StatelessWidget {
                               blurRadius: 5.0.r,
                             ),
                           ]),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextField(
+                          // ignorePointers: true,
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'search',
+                              prefixIcon: Icon(Icons.search)),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: 13,

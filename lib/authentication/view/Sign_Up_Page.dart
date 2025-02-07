@@ -120,4 +120,11 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _signupemailcontroller.dispose();
+    _signuppasswordcontroller.dispose();
+    super.dispose();
+  }
 }

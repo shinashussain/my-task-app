@@ -126,4 +126,11 @@ class _Login_pageState extends State<Login_page> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _loginemailcontroller.dispose();
+    _loginpasswordcontroller.dispose();
+    super.dispose();
+  }
 }
