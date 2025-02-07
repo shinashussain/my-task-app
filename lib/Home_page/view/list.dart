@@ -26,7 +26,7 @@ class Card_of_list extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16).h,
+      padding: const EdgeInsets.only(bottom: 32).h,
       child: Container(
         width: 331.w,
         decoration: BoxDecoration(
