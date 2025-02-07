@@ -71,3 +71,11 @@ android {
 # authentication funcion 
 
 login function and signup function is done login and signup is using email but the email verification is doesnot created 
+
+# set data 
+
+set data function is done the functon is working 
+
+# get data and stream function 
+
+the get data and streem is is perfectly getting data on home screen

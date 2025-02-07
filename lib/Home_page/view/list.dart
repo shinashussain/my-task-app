@@ -1,6 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_task_app/Home_page/model/Note.dart';
+import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 
 // this is list class this list is present list
 // in home page
@@ -9,19 +13,33 @@ class List extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: 4,
-        itemBuilder: (BuildContext context, int index) {
-          return Card_of_list();
+    return StreamBuilder<QuerySnapshot>(
+        stream: DbFirestore().stream(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return SizedBox(
+                width: 393,
+                height: 250,
+                child: Center(child: CircularProgressIndicator()));
+          }
+          final noteslist = DbFirestore().getNotes(snapshot);
+          return ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              final note = noteslist[index];
+              return Card_of_list(note);
+            },
+            itemCount: noteslist.length,
+          );
         });
   }
 }
 
 // this card is used in home/list
 class Card_of_list extends StatelessWidget {
-  const Card_of_list({super.key});
+  Note _note;
+  Card_of_list(this._note, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +67,8 @@ class Card_of_list extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(20.r)),
                     image: DecorationImage(
-                        image: AssetImage('assets/flutter.png'),
-                        fit: BoxFit.fill)),
+                      image: AssetImage('assets/flutter.png'),
+                    )),
               ),
             ),
             Padding(
@@ -61,7 +79,7 @@ class Card_of_list extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'TItle',
+                    _note.title,
                     style: GoogleFonts.rubik(
                         fontSize: 20,
                         color: Colors.black,
@@ -70,7 +88,7 @@ class Card_of_list extends StatelessWidget {
                   SizedBox(
                       width: 207,
                       child: Text(
-                        'Discription ............................................................................................................',
+                        _note.discription,
                         style: GoogleFonts.rubik(
                             fontSize: 15,
                             color: Colors.black,
