@@ -37,13 +37,29 @@ class Card_of_list extends StatelessWidget {
       child: Row(
         spacing: 11.w,
         children: [
-          Container(
-            height: 67,
-            width: 67,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                image: DecorationImage(
-                    image: AssetImage('assets/flutter.png'), fit: BoxFit.fill)),
+          Padding(
+            padding: const EdgeInsets.only(left: 21).w,
+            child: Container(
+              height: 67,
+              width: 67,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20.r)),
+                  image: DecorationImage(
+                      image: AssetImage('assets/flutter.png'),
+                      fit: BoxFit.fill)),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 11, top: 17).w.h,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'TItle',
+                )
+              ],
+            ),
           )
         ],
       ),
