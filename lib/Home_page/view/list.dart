@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,9 +7,14 @@ import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 
 // this is list class this list is present list
 // in home page
-class List extends StatelessWidget {
+class List extends StatefulWidget {
   const List({super.key});
 
+  @override
+  State<List> createState() => _ListState();
+}
+
+class _ListState extends State<List> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
@@ -61,14 +65,17 @@ class Card_of_list extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 21).w,
-              child: Container(
-                height: 67,
-                width: 67,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(20.r)),
-                    image: DecorationImage(
-                      image: AssetImage('assets/flutter.png'),
-                    )),
+              child: SizedBox(
+                height: 70.h,
+                child: Container(
+                  height: 67.h,
+                  width: 67.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20.r)),
+                      image: DecorationImage(
+                        image: AssetImage(_note.imageurl),
+                      )),
+                ),
               ),
             ),
             Padding(

@@ -32,19 +32,24 @@ class DbFirestore {
   Stream<QuerySnapshot> stream() {
     // Make isDone nullable since it's not used
     try {
-      final userId = Authentication().CurrentUser?.uid;
-      if (userId == null) {
-        throw FirebaseException(
-            plugin: 'firestore', message: 'User is not authenticated');
-      }
-
       return _Firestoredb.collection('users')
-          .doc(userId)
+          .doc(Authentication().CurrentUser?.uid)
           .collection('note')
           .orderBy('title')
           .snapshots();
     } catch (e) {
       return Stream.error(e);
+    }
+  }
+
+  Future<void> getnote() async {
+    try {
+      await _Firestoredb.collection('users')
+          .doc(Authentication().CurrentUser?.uid)
+          .collection('note')
+          .snapshots();
+    } catch (e) {
+      print(e);
     }
   }
 

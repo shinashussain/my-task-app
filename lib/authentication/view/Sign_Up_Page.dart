@@ -26,11 +26,11 @@ class _SignUpPageState extends State<SignUpPage> {
           _signuppasswordcontroller.text.trim());
       Navigator.pop(context);
       DbFirestore().Adddata('title 1', 'this is title one disciption',
-          'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+          'https://picsum.photos/300/300?random=1');
       DbFirestore().Adddata('title 2', 'this is title two disciption',
-          'https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+          'https://picsum.photos/300/300?random=2');
       DbFirestore().Adddata('title 2', 'this is title two disciption',
-          'https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+          'https://picsum.photos/300/300?random=3');
     } on FirebaseAuthException catch (e) {
       setState(() {
         String? errormassage = e.message;
