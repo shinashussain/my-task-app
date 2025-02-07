@@ -17,7 +17,7 @@ class Authentication {
   }
 
   // signup function email and password pass on parameater
-  Future<void> creatuser(_email, _Password) async {
+  Future<void> signup(_email, _Password) async {
     await _FirebaseAuth.createUserWithEmailAndPassword(
         email: _email, password: _Password);
   }

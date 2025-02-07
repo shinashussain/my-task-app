@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_task_app/Home_page/view/Load_more_page.dart';
 import 'package:my_task_app/Home_page/view/list.dart';
+import 'package:my_task_app/authentication/viewmodel/authentication.dart';
 
 // this is home page
 class Home extends StatelessWidget {
@@ -36,7 +37,9 @@ class Home extends StatelessWidget {
                       width: 13,
                     ),
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Authentication().signOut();
+                      },
                       icon: Icon(Icons.account_circle_outlined),
                       iconSize: 35.sp,
                       color: Colors.black54,
