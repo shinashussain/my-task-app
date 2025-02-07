@@ -71,7 +71,9 @@ class SignUpPage extends StatelessWidget {
                   children: [
                     Text('Have an account?'),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         child:
                             Text('login', style: TextStyle(color: Colors.blue)))
                   ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_task_app/authentication/view/Sign_Up_Page.dart';
 
 class Login_page extends StatelessWidget {
   const Login_page({super.key});
@@ -71,7 +72,13 @@ class Login_page extends StatelessWidget {
                   children: [
                     Text('Dont have an account?'),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignUpPage()),
+                          );
+                        },
                         child: Text('Sign up',
                             style: TextStyle(color: Colors.blue)))
                   ],

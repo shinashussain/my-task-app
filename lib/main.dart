@@ -1,11 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_task_app/Home_page/view/Home.dart';
-import 'package:my_task_app/authentication/view/Sign_Up_Page.dart';
-import 'package:my_task_app/authentication/view/login_page.dart';
+import 'package:my_task_app/authentication/view/direction_to_homepage.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             // the Home widget is in Home_page folder
-            home: SignUpPage(),
+            home: DirectionToHomepage(),
           );
         });
   }

@@ -55,3 +55,15 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.10.2-all.zip
 
 
 creat loadmore and the two textfield the title and discription
+
+
+# erorr fixed
+
+change mind sdk version
+
+chngaed to
+android {
+    defaultConfig {
+        minSdk = 23
+    }
+}
