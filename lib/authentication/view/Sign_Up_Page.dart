@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 import 'package:my_task_app/authentication/viewmodel/authentication.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -24,6 +25,12 @@ class _SignUpPageState extends State<SignUpPage> {
       await Authentication().signup(_signupemailcontroller.text.trim(),
           _signuppasswordcontroller.text.trim());
       Navigator.pop(context);
+      DbFirestore().Adddata('title 1', 'this is title one disciption',
+          'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+      DbFirestore().Adddata('title 2', 'this is title two disciption',
+          'https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+      DbFirestore().Adddata('title 2', 'this is title two disciption',
+          'https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
     } on FirebaseAuthException catch (e) {
       setState(() {
         String? errormassage = e.message;

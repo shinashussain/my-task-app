@@ -68,6 +68,18 @@ class Home extends StatelessWidget {
                   ),
                 ),
                 List(),
+                Center(
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SecondRoute()),
+                      );
+                    },
+                    child: Text('secont page'),
+                  ),
+                )
               ],
             ),
           ),
@@ -87,5 +99,17 @@ class Home extends StatelessWidget {
             child: Icon(Icons.add),
           ),
         ));
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: Image.network('https://picsum.photos/300/300?random=10')),
+    );
   }
 }
