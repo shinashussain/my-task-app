@@ -83,5 +83,17 @@ the get data and streem is is perfectly getting data on home screen
 # get function erorr 
 
 the erorr is network image is some erorr
-image is not getting iamage url is still properly get 
+image is not getting iamage url is still properly get
+
+# refreshing
+
+refreshing and refreshing funtion is done 
+
+# iamge eroor
+
+the image is not shown in screen the reason is the debug time iamge is not shown
+but the releas time image is shown is no more problem 
+so am write code for shown image in network image 
+
+
 
