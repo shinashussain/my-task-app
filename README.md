@@ -79,3 +79,9 @@ set data function is done the functon is working
 # get data and stream function 
 
 the get data and streem is is perfectly getting data on home screen
+
+# get function erorr 
+
+the erorr is network image is some erorr
+image is not getting iamage url is still properly get 
+
