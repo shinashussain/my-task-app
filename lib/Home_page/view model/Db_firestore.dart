@@ -76,26 +76,3 @@ class DbFirestore {
 
 
 
-//  Stream<QuerySnapshot> stream(bool isDone) {
-//     return _Firestoredb.collection('users')
-//         .doc(Authentication().CurrentUser?.uid)
-//         .collection('note')
-//         .orderBy('title')
-//         .snapshots();
-//   }
-
-//   // get funcion
-//   List getNotes(AsyncSnapshot snapshot) {
-//     try {
-//       final notesList = snapshot.data!.docs.map((doc) {
-//         final data = doc.data() as Map<String, dynamic>;
-//         return Note(
-//             data['title'], data['discription'], data['imageurl'], data['id']);
-//       }).toList();
-//       print(notesList);
-//       return notesList;
-//     } catch (e) {
-//       print('get note function erorr $e');
-//       return [];
-//     }
-//   }

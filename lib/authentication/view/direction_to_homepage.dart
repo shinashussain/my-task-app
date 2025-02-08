@@ -14,7 +14,7 @@ class DirectionToHomepage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             // return Scaffold();
-            return const Home();
+            return Home();
           } else {
             return Login_page();
           }

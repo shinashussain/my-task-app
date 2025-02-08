@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_task_app/Home_page/model/Note.dart';
 import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 import 'package:my_task_app/Home_page/view/Load_more_page.dart';
+import 'package:my_task_app/Home_page/view/MySearchdeligate.dart';
 import 'package:my_task_app/Home_page/view/list.dart';
 import 'package:my_task_app/authentication/viewmodel/authentication.dart';
 
@@ -40,26 +42,42 @@ class _HomeState extends State<Home> {
                 children: [
                   Row(
                     children: [
-                      Container(
-                        width: 283,
-                        height: 38,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 5.0.r,
-                              ),
-                            ]),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: TextField(
-                            // ignorePointers: true,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'search',
-                                prefixIcon: Icon(Icons.search)),
+                      GestureDetector(
+                        onTap: () {
+                          showSearch(
+                            context: context,
+                            delegate: MySearchDelegate(),
+                          );
+                        },
+                        child: Container(
+                          width: 283,
+                          height: 38,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 5.0.r,
+                                ),
+                              ]),
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20).w,
+                            child: Row(
+                              spacing: 10.w,
+                              children: [
+                                Icon(Icons.search),
+                                Text(
+                                  'search',
+                                  style: GoogleFonts.rubik(
+                                    fontSize: 20,
+                                    color: Colors.black54,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -70,7 +88,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Authentication().signOut();
                         },
-                        icon: Icon(Icons.account_circle_outlined),
+                        icon: Icon(Icons.logout_outlined),
                         iconSize: 35.sp,
                         color: Colors.black54,
                       )
