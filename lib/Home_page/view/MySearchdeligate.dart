@@ -55,15 +55,9 @@ class MySearchDelegate extends SearchDelegate<Note?> {
     if (query == _cachedQuery && _cachedResults != null) {
       return _cachedResults!;
     }
-
-    final userId = Authentication().CurrentUser?.uid;
-    if (userId == null) {
-      throw Exception('User not authenticated');
-    }
-
     final snapshot = await _firestore
         .collection('users')
-        .doc(userId)
+        .doc(Authentication().CurrentUser?.uid)
         .collection('note')
         .where('title', isGreaterThanOrEqualTo: query.toLowerCase())
         .where('title', isLessThanOrEqualTo: query.toLowerCase() + '\uf8ff')

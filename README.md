@@ -95,5 +95,4 @@ the image is not shown in screen the reason is the debug time iamge is not shown
 but the releas time image is shown is no more problem 
 so am write code for shown image in network image 
 
-
-
+# 

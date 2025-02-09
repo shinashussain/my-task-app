@@ -32,7 +32,7 @@ class _ListState extends State<List> {
             shrinkWrap: true,
             itemBuilder: (context, index) {
               final note = noteslist[index];
-              return Card_of_list(note);
+              return Cardoflist(note);
             },
             itemCount: noteslist.length,
           );
@@ -41,9 +41,10 @@ class _ListState extends State<List> {
 }
 
 // this card is used in home/list
-class Card_of_list extends StatelessWidget {
+
+class Cardoflist extends StatelessWidget {
   Note _note;
-  Card_of_list(this._note, {super.key});
+  Cardoflist(this._note, {super.key});
 
   @override
   Widget build(BuildContext context) {
