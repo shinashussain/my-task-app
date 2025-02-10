@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_task_app/Home_page/model/Note.dart';
 import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
-import 'package:my_task_app/Home_page/view/Card_of_list.dart';
+import 'package:my_task_app/Home_page/view/Cardoflost.dart';
 
 class Searchdeligation extends SearchDelegate<Note?> {
   @override

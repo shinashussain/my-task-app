@@ -5,6 +5,7 @@ import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 import 'package:my_task_app/Home_page/view/Load_more_page.dart';
 import 'package:my_task_app/Home_page/view/SearchDeligation.dart';
 import 'package:my_task_app/Home_page/view/list.dart';
+import 'package:my_task_app/Home_page/view/test.dart';
 import 'package:my_task_app/authentication/viewmodel/authentication.dart';
 
 // this is home page
@@ -78,7 +79,14 @@ class _HomeState extends State<Home> {
                                   width: 85,
                                 ),
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              SpeechToTextPage()),
+                                    );
+                                  },
                                   icon: Icon(Icons.mic),
                                   color: Colors.deepOrange,
                                 )
