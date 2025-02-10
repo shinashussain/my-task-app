@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_task_app/Home_page/model/Note.dart';
 import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 import 'package:my_task_app/Home_page/view/Load_more_page.dart';
-import 'package:my_task_app/Home_page/view/MySearchdeligate.dart';
+import 'package:my_task_app/Home_page/view/SearchDeligation.dart';
 import 'package:my_task_app/Home_page/view/list.dart';
 import 'package:my_task_app/authentication/viewmodel/authentication.dart';
 
@@ -46,7 +45,7 @@ class _HomeState extends State<Home> {
                         onTap: () {
                           showSearch(
                             context: context,
-                            delegate: MySearchDelegate(),
+                            delegate: Searchdeligation(),
                           );
                         },
                         child: Container(
@@ -63,8 +62,7 @@ class _HomeState extends State<Home> {
                                 ),
                               ]),
                           child: Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20).w,
+                            padding: const EdgeInsets.only(left: 20).w,
                             child: Row(
                               spacing: 10.w,
                               children: [
@@ -75,6 +73,14 @@ class _HomeState extends State<Home> {
                                     fontSize: 20,
                                     color: Colors.black54,
                                   ),
+                                ),
+                                SizedBox(
+                                  width: 85,
+                                ),
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(Icons.mic),
+                                  color: Colors.deepOrange,
                                 )
                               ],
                             ),

@@ -72,4 +72,13 @@ class DbFirestore {
       return [];
     }
   }
+
+  Future<QuerySnapshot> SearchResults(query) async {
+    return _Firestoredb.collection('users')
+        .doc(Authentication().CurrentUser?.uid)
+        .collection('note')
+        .where('title', isGreaterThanOrEqualTo: query.toLowerCase())
+        .where('title', isLessThanOrEqualTo: query.toLowerCase() + '\uf8ff')
+        .get();
+  }
 }
