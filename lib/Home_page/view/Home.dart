@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 import 'package:my_task_app/Home_page/view/Load_more_page.dart';
 import 'package:my_task_app/Home_page/view/SearchDeligation.dart';
+import 'package:my_task_app/Home_page/view/speech.dart';
 import 'package:my_task_app/Home_page/view/list.dart';
-import 'package:my_task_app/Home_page/view/test.dart';
 import 'package:my_task_app/authentication/viewmodel/authentication.dart';
 
 // this is home page
@@ -50,8 +50,8 @@ class _HomeState extends State<Home> {
                           );
                         },
                         child: Container(
-                          width: 283,
-                          height: 38,
+                          width: 280.w,
+                          height: 38.h,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius:
@@ -75,17 +75,14 @@ class _HomeState extends State<Home> {
                                     color: Colors.black54,
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 85,
-                                ),
+                                SizedBox(width: 90.w),
                                 IconButton(
                                   onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              SpeechToTextPage()),
-                                    );
+                                    showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return speeck();
+                                        });
                                   },
                                   icon: Icon(Icons.mic),
                                   color: Colors.deepOrange,
@@ -94,9 +91,6 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 13,
                       ),
                       IconButton(
                         onPressed: () {

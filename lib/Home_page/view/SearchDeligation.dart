@@ -11,6 +11,9 @@ import 'package:my_task_app/Home_page/view%20model/Db_firestore.dart';
 import 'package:my_task_app/Home_page/view/Cardoflost.dart';
 
 class Searchdeligation extends SearchDelegate<Note?> {
+  String? word;
+  Searchdeligation({this.word});
+
   @override
   ThemeData appBarTheme(BuildContext context) {
     return ThemeData(

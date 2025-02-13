@@ -119,6 +119,13 @@ class _Login_pageState extends State<Login_page> {
                             style: TextStyle(color: Colors.blue)))
                   ],
                 ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                ),
               )
             ],
           ),
