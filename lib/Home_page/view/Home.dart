@@ -92,14 +92,10 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      IconButton(
-                        onPressed: () {
-                          Authentication().signOut();
-                        },
-                        icon: Icon(Icons.logout_outlined),
-                        iconSize: 35.sp,
-                        color: Colors.black54,
-                      )
+                      CircleAvatar(
+                          radius: 40,
+                          child: Image.network(
+                              '${Authentication().CurrentUser?.photoURL}'))
                     ],
                   ),
                   Align(

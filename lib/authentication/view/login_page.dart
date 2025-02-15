@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,6 +36,7 @@ class _Login_pageState extends State<Login_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20).h,
         child: SingleChildScrollView(
@@ -120,13 +119,24 @@ class _Login_pageState extends State<Login_page> {
                   ],
                 ),
               ),
-              GestureDetector(
-                onTap: () {},
+              SizedBox(
+                height: 10.h,
+              ),
+              Center(
+                  child: GestureDetector(
+                onTap: () {
+                  print('tap the google  button 11111111111111111111111');
+                  Authentication().signInWithGoogle();
+                },
                 child: Container(
+                  height: 45.h,
+                  width: 45.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      image: DecorationImage(
+                          image: AssetImage('assets/google.webp'))),
                 ),
-              )
+              ))
             ],
           ),
         ),
